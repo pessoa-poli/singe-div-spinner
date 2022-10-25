@@ -1,13 +1,17 @@
+/* Thickness of the bars */
+:root {
+    --bar-width: 30vmin;
+    --bar-height: 5vmin;
+}
+
 /* 1 Spinner bar */
 .one {
     position: absolute;
     background-color: green;
-    height: 5vh;
-    width: 20vw;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,1vw);
-    transition: transform 2s ease-in-out;
+    height: var(--bar-height);
+    width: var(--bar-width);
+    left: calc(50vw - calc(var(--bar-width) / 2));
+    top: calc(50vh - calc(var(--bar-height) / 2));
 }
 
 /* Second Spinner */
@@ -18,15 +22,14 @@
 }
 
 .one:after {
-    --rot-degrees: 25deg;
-    --width: 5vh;
-    --height: 20vw;
-    width: var(--width);
-    height: var(--height);
-    /* margin-left: 25%;
-    margin-top: -60%; */
+    --rot-degrees: -60deg;    
     background-color: red;
-    transform: rotate(var(--rot-degrees)) translateY(calc(-0.5 * var(--height)));
+    height: var(--bar-height);
+    width: var(--bar-width);
+    left: calc(-0.35 * var(--bar-width));
+    top: calc(-7 * calc(var(--bar-height) / 2));
+    
+    transform: rotate(var(--rot-degrees));
     border-radius: 20px 0px / 0px 50px;
 }
 
@@ -39,17 +42,20 @@
 }
 
 .one:before {
-    width: 5vh;
-    height: 20vw;
-    margin-left: 50%;
-    margin-top: -50%;
+    --rot-degrees: 60deg;    
     background-color: blue;
-    transform: rotate(-25deg);
+    height: var(--bar-height);
+    width: var(--bar-width);
+    left: calc(40vmin - var(--bar-width));
+    top: calc(-7 * calc(var(--bar-height) / 2));
+    
+    transform: rotate(var(--rot-degrees));
+    border-radius: 20px 0px / 0px 50px;
 }
 
-.one {    
-    animation: doabarrellroll 2s alternate infinite;
-}
+/* .one {    
+    animation: doabarrellroll 2s infinite;
+} */
 
 @keyframes doabarrellroll {
     100% {
