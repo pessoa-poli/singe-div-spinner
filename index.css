@@ -1,17 +1,18 @@
 /* Thickness of the bars */
-:root {
+:root {    
     --bar-width: 30vmin;
     --bar-height: 5vmin;
+    --triangle-height: calc(-40vmin + var(--bar-width));
 }
 
 /* 1 Spinner bar */
-.one {
+.one {    
     position: absolute;
     background-color: green;
     height: var(--bar-height);
     width: var(--bar-width);
     left: calc(50vw - calc(var(--bar-width) / 2));
-    top: calc(50vh - calc(var(--bar-height) / 2));
+    top: calc(50vh - calc(var(--triangle-height) / 2));
 }
 
 /* Second Spinner */
