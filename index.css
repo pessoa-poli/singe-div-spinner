@@ -54,9 +54,10 @@
     border-radius: 20px 0px / 0px 50px;
 }
 
-/* .one {    
+.one {
+    transform-origin: center -10.2vmin;
     animation: doabarrellroll 2s infinite;
-} */
+}
 
 @keyframes doabarrellroll {
     100% {
