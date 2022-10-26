@@ -1,21 +1,31 @@
-/* Thickness of the bars */
+/* Globals */
 :root {    
     --bar-width: 30vmin;
     --bar-height: 5vmin;
     --triangle-height: calc(-40vmin + var(--bar-width));
+    --background-color: white;
+    --spinner-one-color: green;
+    --spinner-two-color: goldenrod;
+    --spinner-three-color: blue;
 }
 
-/* 1 Spinner bar */
-.one {    
+/* 1st Spinner bar */
+.one {
+    /* Sizing */
     position: absolute;
-    background-color: green;
-    height: var(--bar-height);
+    background-color: var(--spinner-one-color);
+    height: 0px;
     width: var(--bar-width);
     left: calc(50vw - calc(var(--bar-width) / 2));
     top: calc(50vh - calc(var(--triangle-height) / 2));
+
+    /* Border Chisel */
+    border-bottom: var(--bar-height) solid var(--spinner-one-color);
+    border-left:   var(--bar-height) solid var(--background-color);
+    border-right:  var(--bar-height) solid var(--background-color);
 }
 
-/* Second Spinner */
+/* 2nd Spinner Bar */
 .one:after {
     position: absolute;
     content: '';
@@ -23,19 +33,25 @@
 }
 
 .one:after {
+    /* Sizing */
+    background-color: var(--spinner-two-color);
+    height: 0px;
+    width: var(--bar-width);    
+    
+    /* Positioning */
     --rot-degrees: -60deg;    
-    background-color: red;
-    height: var(--bar-height);
-    width: var(--bar-width);
-    left: calc(-0.35 * var(--bar-width));
+    left: calc(-0.55 * var(--bar-width));
     top: calc(-7 * calc(var(--bar-height) / 2));
-    
     transform: rotate(var(--rot-degrees));
-    border-radius: 20px 0px / 0px 50px;
+    
+    /* Border Chisel */
+    border-top:    var(--bar-height) solid var(--spinner-two-color);
+    border-left:   var(--bar-height) solid var(--background-color);
+    border-right:  var(--bar-height) solid var(--background-color);
 }
 
 
-/* Third Spinner Bar */
+/* 3rd Spinner Bar */
 .one:before {
     content: '';
     display: block;
@@ -43,15 +59,22 @@
 }
 
 .one:before {
-    --rot-degrees: 60deg;    
-    background-color: blue;
-    height: var(--bar-height);
+    /* Sizing */
+    background-color: var(--spinner-three-color);
+    height: 0px;
     width: var(--bar-width);
-    left: calc(40vmin - var(--bar-width));
-    top: calc(-7 * calc(var(--bar-height) / 2));
     
+    /* Positioning */
+    --rot-degrees: 60deg;    
+    left: calc(0.2 * var(--bar-width));
+    top: calc(-7 * calc(var(--bar-height) / 2));    
     transform: rotate(var(--rot-degrees));
     border-radius: 20px 0px / 0px 50px;
+
+    /* Border Chisel */
+    border-top:    var(--bar-height) solid var(--spinner-three-color);
+    border-left:   var(--bar-height) solid var(--background-color);
+    border-right:  var(--bar-height) solid var(--background-color);
 }
 
 .one {
